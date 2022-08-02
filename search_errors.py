@@ -2,7 +2,7 @@ import pandas as pd
 
 arr = ["drossel", "normal", "mosfets"]
 naming = ["DROSSEL", "NORMAL", "MOSFETS"]
-output_file = open("test.txt", "w")
+output_file = open("error_occurances.txt", "w")
 
 
 for j in range(0,3):
