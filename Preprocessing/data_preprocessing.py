@@ -81,7 +81,7 @@ class Preprocessing:
 # not jet used functions for preprocess the dataframes, also implemented in the sent/other project
 class Dataframe_processing:
     def calculate_values(df: pd.DataFrame):
-        values_dict  = {"T_min":  df["temperature"].min(), "T_max":  df["temperature"].max(), "T_delta": (df["temperature"].max()-df["temperature"].min()), "Pow_mean":  df["power"].mean()}
+        values_dict  = {"T_min":  df["onBoardTemp"].min(), "T_max":  df["onBoardTemp"].max(), "T_delta": (df["onBoardTemp"].max()-df["onBoardTemp"].min()), "Pow_mean":  df["power"].mean()}
         df_dictionary = pd.DataFrame([values_dict])
         return df_dictionary
 
@@ -93,21 +93,47 @@ class Dataframe_processing:
             new_size = current_size + size
             if i == 0:
                 df_subset = df.iloc[:current_size, :]
-                print(0, current_size, sep="-----")
+                #print(0, current_size, sep="-----")
             else:
                 df_subset = df.iloc[(current_size+1): new_size, :]
-                print((current_size+1), new_size, sep="-----")
+                #print((current_size+1), new_size, sep="-----")
                 current_size = new_size
             
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['current'] * df_subset['v_out']
+            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
             output_df = pd.concat([output_df, df_dictionary], ignore_index=True)
             
         output_df["status"] = status
+        return output_df
+    
+    def make_subsets_without_shift_audio(df: pd.DataFrame, size: int, status: str, song_title: str):
+        #1.Step: Devide the Dataframe in subsets with size of range
+        output_df = pd.DataFrame(columns=["T_min", "T_max", "T_delta", "Pow_mean"])
+        current_size = size
+        for i in range(0,int(len(df)/size)):
+            new_size = current_size + size
+            if i == 0:
+                df_subset = df.iloc[:current_size, :]
+                #print(0, current_size, sep="-----")
+            else:
+                df_subset = df.iloc[(current_size+1): new_size, :]
+                #print((current_size+1), new_size, sep="-----")
+                current_size = new_size
+            
+            #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
+            #        and transform it back into an dataframe
+            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_dictionary = Dataframe_processing.calculate_values(df_subset)
+            
+            #3.Step: merge the subsets back to one dataframe
+            output_df = pd.concat([output_df, df_dictionary], ignore_index=True)
+            
+        output_df["status"] = status
+        output_df["songtitle"] = song_title
         return output_df
 
     def make_subsets_with_shift(df: pd.DataFrame, size: int, status: str, shift: int):
@@ -117,11 +143,11 @@ class Dataframe_processing:
         i = 0
         while (i+(size)) < len(df):
             df_subset = df.iloc[i:(i+size), :]
-            print(i, size+i, sep="-----")
+            #print(i, size+i, sep="-----")
             i = i + shift
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['current'] * df_subset['v_out']
+            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
@@ -129,18 +155,48 @@ class Dataframe_processing:
 
         output_df["status"] = status
         return output_df
+
+    def make_subsets_with_shift_audio(df: pd.DataFrame, size: int, status: str, shift: int, song_title: str):
     
-    def make_subsets(df: pd.DataFrame, size: int, status: str, shift: int):
-        if shift:
-            return Dataframe_processing.make_subsets_with_shift(df,size,status,shift)
+        #1.Step: Devide the Dataframe in subsets with size of range
+        output_df = pd.DataFrame(columns=["T_min", "T_max", "T_delta", "Pow_mean"])
+        i = 0
+        while (i+(size)) < len(df):
+            df_subset = df.iloc[i:(i+size), :]
+            #print(i, size+i, sep="-----")
+            i = i + shift
+            #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
+            #        and transform it back into an dataframe
+            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_dictionary = Dataframe_processing.calculate_values(df_subset)
+            
+            #3.Step: merge the subsets back to one dataframe
+            output_df = pd.concat([output_df, df_dictionary], ignore_index=True)
+
+        output_df["status"] = status
+        output_df["songtitle"] = song_title
+        return output_df
+    
+    
+    def make_subsets(df: pd.DataFrame, size: int, status: str, shift: int, song_title: str):
+        if song_title:
+            if shift:
+                return Dataframe_processing.make_subsets_with_shift_audio(df,size,status,shift, song_title)
+            else:
+                print("Unable shift-mode!")
+                return Dataframe_processing.make_subsets_without_shift_audio(df,size,status, song_title)
         else:
-            print("Unable shift-mode!")
-            return Dataframe_processing.make_subsets_without_shift(df,size,status)
+            if shift:
+                return Dataframe_processing.make_subsets_with_shift(df,size,status,shift)
+            else:
+                print("Unable shift-mode!")
+                return Dataframe_processing.make_subsets_without_shift(df,size,status)
+
     
     def clean_dataframe(df: pd.DataFrame, max_Vin, min_Vin, max_temp, min_temp, max_Vout, min_Vout, max_current, min_current):
         #to keep it simple, it each operation is in one line
-        df = df[(df["v_in"] >= min_Vin) & (df["v_in"] <= max_Vin)]
-        df = df[(df["temperature"] >= min_temp) & (df["temperature"] <= max_temp)]
-        df = df[(df["v_out"] >= min_Vout) & (df["v_out"] <= max_Vout)]
-        df = df[(df["current"] >= min_current) & (df["current"] <= max_current)]
+        df = df[(df["vIn"] >= min_Vin) & (df["vIn"] <= max_Vin)]
+        df = df[(df["onBoardTemp"] >= min_temp) & (df["onBoardTemp"] <= max_temp)]
+        df = df[(df["vOut"] >= min_Vout) & (df["vOut"] <= max_Vout)]
+        df = df[(df["currentIn"] >= min_current) & (df["currentIn"] <= max_current)]
         return df
