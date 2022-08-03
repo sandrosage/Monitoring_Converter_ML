@@ -5,6 +5,7 @@ Repository which processes the recordings/data of DCDC-Converter regarding V_in,
 preprocessing function to clean the data, transform it into the right data format and stores the final dataset for train-, test- and validationset. Further it also includes the Machine Learning part.
 
 ![Sequencediagram](Data_Preprocessing_Sequencediagram.png)
+![Scatterplot](scatterplot_audio_merged_dataset.png)
 
 ## Installation:
 #### using python 3.10.xx
