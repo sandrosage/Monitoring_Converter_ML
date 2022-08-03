@@ -2,6 +2,9 @@ lines (209 sloc)  3.97 KB
 
 # USER ADDED
 error_occurances.txt
+Static_Data/
+Audio_Recordings/
+Preprocessed_StaticData_Recordings/
 
 # AUTO GENERATED
 
