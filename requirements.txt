@@ -2,3 +2,5 @@ pandas
 numpy
 os 
 csv
+seaborn
+matplotlib
