@@ -28,7 +28,7 @@ pip install -r requirements.txt
 In this layer the original, raw data files are processed and cleaned. This means that there can be faulty rows with more than expected features, or the syntax of the files has to be edited (f.ex. leave out the brackets [ ; ]). The data files are also transformed into the needed csv-format with the right column names in the header.
 ### 2. Layer of data preprocessing 
 
-In the <converter_relevant_operations.ipynb> you can find the code for processing all the edited files regarding the shift and subset function. You have to devide the whole datafiles into subsets with a specific range to then afterwards calculate the significant features like:
+In the *converter_relevant_operations.ipynb* you can find the code for processing all the edited files regarding the shift and subset function. You have to devide the whole datafiles into subsets with a specific range to then afterwards calculate the significant features like:
     - mean of power
     - max. temperature
     - min. temperature
