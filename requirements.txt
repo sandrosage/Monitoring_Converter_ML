@@ -5,3 +5,4 @@ csv
 seaborn
 matplotlib
 scikit-learn
+tensorflow
