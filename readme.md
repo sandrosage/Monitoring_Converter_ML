@@ -1,5 +1,38 @@
 # Description:
 
+## Introduction:
+For the static data generation we tested the below dcdc-Converters. They were all tested with different loads     (0A, 1A, 2A, 3A, 4A, 5A, 6A). Communication: 115200 kbps UART, delay(2) excluded. Every recording had a duration of 30 minutes. We also measured the room temperature to have a reference value.
+
+    We used three different dcdc-Converter:
+        - DCHY2400-08 (Normal)
+        - DCHY2400-15 (manipulated with Drossel)
+        - DCHY2400-12 (manipulated with Mosfets)
+
+
+    
+For the recording an input voltage of 24V was used. The measurements were determined with a Arduino UNO through I2C(100 kHz) and sent to a Raspberry PI 4 with UART(baudrate: 115200). For the audio amplifier a "Conrad Components Stereo-Verstärker Bausatz 9 V/DC, 12 V/DC, 18 V/DC 35 W 2 Ω" with 2 x 35 W NF-Verstärker was used. The input voltage for the amplifier was 12V. The resistor load is 2.5 Ω.
+
+    We used the same three different dcdc-Converter:
+        - DCHY2400-08 (Normal)
+        - DCHY2400-15 (manipulated with Drossel)
+        - DCHY2400-12 (manipulated with Mosfets)
+    
+For the audio signal a normal pc/laptop which played a MP3-File was used.
+### Steps:
+#### 1. Data recording/generation for "NORMAL"-dcdc
+    data for every song(3) was recorded thrice and labeled as V1, V2, V3
+#### 2. Data recording/generation for "DROSSEL"-dcdc
+    data for every song(3) was recorded thrice and labeled as V1, V2, V3
+#### 3. Data recording/generation for "MOSFET"-dcdc
+    data for every song(3) was recorded thrice and labeled as V1, V2, V3
+
+### Songs:
+    Labeled as NEVER <--- Rick Astley - Never Gonna Give You Up: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+    Labeled as PIECES <--- AVAION, VIZE, Leony - Pieces: https://www.youtube.com/watch?v=mMbGQkvxVag
+    
+    Labeled as TW5 <--- Neelix - The Twenty Five: https://www.youtube.com/watch?v=SPY1sGZN6hc
+
 ## Background:
 Repository which processes the recordings/data of DCDC-Converter regarding V_in, V_out, Current, OnBoard temperature and room temperature. It contains all the necessary 
 preprocessing function to clean the data, transform it into the right data format and stores the final dataset for train-, test- and validationset. Further it also includes the Machine Learning part.
