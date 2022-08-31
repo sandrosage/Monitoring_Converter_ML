@@ -27,11 +27,11 @@ For the audio signal a normal pc/laptop which played a MP3-File was used.
     data for every song(3) was recorded thrice and labeled as V1, V2, V3
 
 ### Songs:
-    Labeled as NEVER <--- Rick Astley - Never Gonna Give You Up: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    Labeled as NG <--- Rick Astley - Never Gonna Give You Up: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
     Labeled as PIECES <--- AVAION, VIZE, Leony - Pieces: https://www.youtube.com/watch?v=mMbGQkvxVag
     
-    Labeled as TW5 <--- Neelix - The Twenty Five: https://www.youtube.com/watch?v=SPY1sGZN6hc
+    Labeled as NEELIX <--- Neelix - The Twenty Five: https://www.youtube.com/watch?v=SPY1sGZN6hc
 
 ## Background:
 Repository which processes the recordings/data of DCDC-Converter regarding V_in, V_out, Current, OnBoard temperature and room temperature. It contains all the necessary 
