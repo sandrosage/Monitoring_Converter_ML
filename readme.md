@@ -38,8 +38,15 @@ Repository which processes the recordings/data of DCDC-Converter regarding V_in,
 preprocessing function to clean the data, transform it into the right data format and stores the final dataset for train-, test- and validationset. Further it also includes the Machine Learning part.
 
 ![Sequencediagram](Ressources/Data_Preprocessing_Sequencediagram.png)
+
+## Data Exploration:
+After the whole process of cleaning the data, transforming it into the right shape and calculating significant values which are required to make statements. An visualisation of the final audio recordings csv-file (its emergence was explained in the previous step). On the x-axis, the maximal temperature is depicted, on the y-axis the mean power is scaled. The data is classified regarding the dcdc-type (Normal, Mosfets, Drossel) and the song title (Neelix, Ng, Pieces)
+
 ![Scatterplot](Ressources/scatterplot_audio_merged_dataset.png)
 
+Nearly the same was done with the static dataset. Instead of using the same method for plotting the results, seaborn's sns.pairplot() was used to create a map of different visualization plots. The data is classified regarding the dcdc-type (Normal, Mosfets, Drossel)
+
+![Pairplot](Ressources/pairplot_static_merged_dataset.png)
 ## Installation:
 #### using python 3.10.5
 
