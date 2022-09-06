@@ -1,6 +1,7 @@
 lines (209 sloc)  3.97 KB
 
 # USER ADDED
+*.h5
 error_occurances.txt
 Static_Data/
 Audio_Recordings/
