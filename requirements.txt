@@ -1,7 +1,4 @@
 pandas
-numpy
-os 
-csv
 seaborn
 matplotlib
 scikit-learn
