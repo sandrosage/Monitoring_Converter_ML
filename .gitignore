@@ -2,11 +2,14 @@ lines (209 sloc)  3.97 KB
 
 # USER ADDED
 *.h5
+*.tflite
 error_occurances.txt
 Static_Data/
 Audio_Recordings/
 Preprocessed_StaticData_Recordings/
 Preprocessed_Audio_Recordings/
+Printer3D_Data/
+Printer3D_noDash/
 
 # AUTO GENERATED
 
