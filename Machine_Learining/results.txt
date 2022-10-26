@@ -1,0 +1,69 @@
+PCA & SCALE
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': True, 'pca': True, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9973144456408505, 'best_params': {'algorithm': 'auto', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}}
+
+{'scaling': True, 'pca': True, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9901919005760199, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 4}}
+
+{'scaling': True, 'pca': True, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9960430241606506, 'best_params': {'criterion': 'log_loss', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 4, 'n_estimators': 60}}
+
+----- Best estimator-----
+1. KNeighborsClassifier()-> accuracy: 99.73144456408505%
+
+2. RandomForestClassifier()-> accuracy: 99.60430241606505%
+
+3. DecisionTreeClassifier()-> accuracy: 99.01919005760199%
+
+
+
+
+PCA
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': True, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9976258138230965, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}}
+
+{'scaling': None, 'pca': True, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9951867599762394, 'best_params': {'criterion': 'gini', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 4}}
+
+{'scaling': None, 'pca': True, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9971457846492668, 'best_params': {'criterion': 'log_loss', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 4, 'n_estimators': 150}}
+
+----- Best estimator-----
+1. KNeighborsClassifier()-> accuracy: 99.76258138230965%
+
+2. RandomForestClassifier()-> accuracy: 99.71457846492669%
+
+3. DecisionTreeClassifier()-> accuracy: 99.51867599762394%
+
+
+
+SCALE
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': True, 'pca': None, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9973014670571547, 'best_params': {'algorithm': 'auto', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}}
+
+{'scaling': True, 'pca': None, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9977555525294729, 'best_params': {'criterion': 'entropy', 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 2}}
+
+{'scaling': True, 'pca': None, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9978723151770064, 'best_params': {'criterion': 'gini', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 60}}
+
+----- Best estimator-----
+1. RandomForestClassifier()-> accuracy: 99.78723151770063%
+
+2. DecisionTreeClassifier()-> accuracy: 99.77555525294729%
+
+3. KNeighborsClassifier()-> accuracy: 99.73014670571547%
+
+
+
+
+
+
+
+
+
+NORMAL::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9981447610740453, 'best_params': {'algorithm': 'auto', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}}
+
+{'scaling': None, 'pca': None, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9979631290733236, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 6}}
+
+{'scaling': None, 'pca': None, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9981317866984372, 'best_params': {'criterion': 'log_loss', 'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}}
+
+----- Best estimator-----
+3. DecisionTreeClassifier()-> accuracy: 99.79631290733236%
+2. RandomForestClassifier()-> accuracy: 99.81317866984372%
+1. KNeighborsClassifier()-> accuracy: 99.81447610740453%

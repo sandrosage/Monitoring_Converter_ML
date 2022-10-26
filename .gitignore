@@ -3,6 +3,7 @@ lines (209 sloc)  3.97 KB
 # USER ADDED
 *.h5
 *.tflite
+*.zip
 error_occurances.txt
 Static_Data/
 Audio_Recordings/
@@ -13,6 +14,8 @@ Printer3D_noDash/
 Machine_Learining/pca_/
 Machine_Learining/scaled_/
 Machine_Learining/scaled_pca_/
+Machine_Learining/normal_/
+Machine_Learining/log_pruning_summaries/
 
 # AUTO GENERATED
 
