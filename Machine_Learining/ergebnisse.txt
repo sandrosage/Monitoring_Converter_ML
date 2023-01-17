@@ -1,0 +1,12 @@
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': 'LinearSVC()', 'best_score': 0.6184183208641533, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'crammer_singer'}, 'test_score': 0.6417747794499221, 'train_time': 2912.5635707378387, 'test_time': 0.013700008392333984}
+
+{'scaling': None, 'pca': None, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9977166294007921, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 3, 'weights': 'distance'}, 'test_score': 0.9981837052413077, 'train_time': 419.6534900665283, 'test_time': 1.0210623741149902}
+
+{'scaling': None, 'pca': None, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9978723202254012, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2}, 'test_score': 0.9981837052413077, 'train_time': 183.256085395813, 'test_time': 0.01399993896484375}
+
+{'scaling': None, 'pca': None, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9980020555653077, 'best_params': {'criterion': 'log_loss', 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 60}, 'test_score': 0.9980280228334198, 'train_time': 4293.430601358414, 'test_time': 0.11206698417663574}
+
+----- Best estimator-----
