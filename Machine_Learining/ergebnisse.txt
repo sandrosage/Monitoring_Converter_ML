@@ -1,12 +1,10 @@
-
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-{'scaling': None, 'pca': None, 'estimator': 'LinearSVC()', 'best_score': 0.6184183208641533, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'crammer_singer'}, 'test_score': 0.6417747794499221, 'train_time': 2912.5635707378387, 'test_time': 0.013700008392333984}
+{'scaling': None, 'pca': None, 'estimator': "KNeighborsClassifier(algorithm='brute', n_jobs=-1, n_neighbors=4,\n                     weights='distance')", 'best_score': 0.9980020606153402, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}, 'test_score': 0.997872340425532, 'train_time': 415.08631563186646, 'test_time': 0.9630365371704102, 'single_estimator_with_best_params_training_time': 0.09006738662719727}
 
-{'scaling': None, 'pca': None, 'estimator': 'KNeighborsClassifier()', 'best_score': 0.9977166294007921, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 3, 'weights': 'distance'}, 'test_score': 0.9981837052413077, 'train_time': 419.6534900665283, 'test_time': 1.0210623741149902}
+{'scaling': None, 'pca': None, 'estimator': "DecisionTreeClassifier(criterion='entropy', max_depth=12, min_samples_leaf=2)", 'best_score': 0.9980539513846146, 'best_params': {'criterion': 'entropy', 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 2}, 'test_score': 0.9976647638816813, 'train_time': 182.0115659236908, 'test_time': 0.013508319854736328, 'single_estimator_with_best_params_training_time': 0.1639082431793213}
 
-{'scaling': None, 'pca': None, 'estimator': 'DecisionTreeClassifier()', 'best_score': 0.9978723202254012, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2}, 'test_score': 0.9981837052413077, 'train_time': 183.256085395813, 'test_time': 0.01399993896484375}
+{'scaling': None, 'pca': None, 'estimator': "RandomForestClassifier(criterion='log_loss', max_depth=15, min_samples_leaf=4,\n                       min_samples_split=4, n_estimators=60)", 'best_score': 0.9981447711725819, 'best_params': {'criterion': 'log_loss', 'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 4, 'n_estimators': 60}, 'test_score': 0.9976647638816813, 'train_time': 4088.7179069519043, 'test_time': 0.10678911209106445, 'single_estimator_with_best_params_training_time': 3.0534420013427734}
 
-{'scaling': None, 'pca': None, 'estimator': 'RandomForestClassifier()', 'best_score': 0.9980020555653077, 'best_params': {'criterion': 'log_loss', 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 60}, 'test_score': 0.9980280228334198, 'train_time': 4293.430601358414, 'test_time': 0.11206698417663574}
+{'scaling': None, 'pca': None, 'estimator': "LinearSVC(max_iter=2000, multi_class='crammer_singer')", 'best_score': 0.6537622473157298, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'crammer_singer'}, 'test_score': 0.6549039958484691, 'train_time': 439.27002334594727, 'test_time': 0.011990785598754883, 'single_estimator_with_best_params_training_time': 1084.3087096214294}
 
 ----- Best estimator-----
