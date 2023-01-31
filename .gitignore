@@ -10,8 +10,7 @@ Static_Data/
 Audio_Recordings/
 Preprocessed_StaticData_Recordings/
 Preprocessed_Audio_Recordings/
-Printer3D_Data/
-Printer3D_noDash/
+Printer3D/
 Machine_Learining/pca_/
 Machine_Learining/scaled_/
 Machine_Learining/scaled_pca_/
