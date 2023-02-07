@@ -8,3 +8,15 @@
 {'scaling': None, 'pca': None, 'estimator': "LinearSVC(max_iter=2000, multi_class='crammer_singer')", 'best_score': 0.6537622473157298, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'crammer_singer'}, 'test_score': 0.6549039958484691, 'train_time': 439.27002334594727, 'test_time': 0.011990785598754883, 'single_estimator_with_best_params_training_time': 1084.3087096214294}
 
 ----- Best estimator-----
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': 'LinearSVC(max_iter=2000)', 'best_score': 0.9883885439941004, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'ovr'}, 'test_score': 0.9882719252724442, 'train_time': 1149.8659262657166, 'test_time': 0.039544105529785156, 'single_estimator_with_best_params_training_time': 29.98306131362915}
+
+{'scaling': None, 'pca': None, 'estimator': "DecisionTreeClassifier(criterion='entropy', max_depth=15, min_samples_leaf=2)", 'best_score': 0.9980669249186052, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2}, 'test_score': 0.9976647638816813, 'train_time': 135.00915622711182, 'test_time': 0.011996269226074219, 'single_estimator_with_best_params_training_time': 0.1616199016571045}
+
+{'scaling': None, 'pca': None, 'estimator': "KNeighborsClassifier(algorithm='brute', n_jobs=-1, n_neighbors=4,\n                     weights='distance')", 'best_score': 0.998015034149331, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}, 'test_score': 0.9979242345614946, 'train_time': 263.4205975532532, 'test_time': 0.5799970626831055, 'single_estimator_with_best_params_training_time': 0.0729975700378418}
+
+{'scaling': None, 'pca': None, 'estimator': 'RandomForestClassifier(max_depth=15, min_samples_leaf=2, min_samples_split=6,\n                       n_estimators=60)', 'best_score': 0.9981577447065725, 'best_params': {'criterion': 'gini', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 60}, 'test_score': 0.997716658017644, 'train_time': 2910.3652572631836, 'test_time': 0.10098791122436523, 'single_estimator_with_best_params_training_time': 2.9829494953155518}
+
+----- Best estimator-----
