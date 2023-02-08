@@ -20,3 +20,21 @@
 {'scaling': None, 'pca': None, 'estimator': 'RandomForestClassifier(max_depth=15, min_samples_leaf=2, min_samples_split=6,\n                       n_estimators=60)', 'best_score': 0.9981577447065725, 'best_params': {'criterion': 'gini', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 60}, 'test_score': 0.997716658017644, 'train_time': 2910.3652572631836, 'test_time': 0.10098791122436523, 'single_estimator_with_best_params_training_time': 2.9829494953155518}
 
 ----- Best estimator-----
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': "DecisionTreeClassifier(criterion='entropy', max_depth=15, min_samples_leaf=2,\n                       min_samples_split=3)", 'best_score': 0.9980669249186052, 'best_params': {'criterion': 'entropy', 'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 3}, 'test_score': 0.9976647638816813, 'train_time': 135.3142054080963, 'test_time': 0.012377500534057617, 'single_estimator_with_best_params_training_time': 0.16141700744628906}
+
+{'scaling': None, 'pca': None, 'estimator': 'LinearSVC(max_iter=2000)', 'best_score': 0.9883885439941004, 'best_params': {'loss': 'squared_hinge', 'max_iter': 2000, 'multi_class': 'ovr'}, 'test_score': 0.9882719252724442, 'train_time': 1146.652542591095, 'test_time': 0.03740334510803223, 'single_estimator_with_best_params_training_time': 27.66779375076294}
+
+{'scaling': None, 'pca': None, 'estimator': "KNeighborsClassifier(algorithm='brute', n_jobs=-1, n_neighbors=4,\n                     weights='distance')", 'best_score': 0.998015034149331, 'best_params': {'algorithm': 'brute', 'n_jobs': -1, 'n_neighbors': 4, 'weights': 'distance'}, 'test_score': 0.9979242345614946, 'train_time': 269.5841248035431, 'test_time': 0.5813837051391602, 'single_estimator_with_best_params_training_time': 0.07469749450683594}
+
+{'scaling': None, 'pca': None, 'estimator': "RandomForestClassifier(criterion='log_loss', max_depth=12, min_samples_leaf=2)", 'best_score': 0.9981447711725819, 'best_params': {'criterion': 'log_loss', 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}, 'test_score': 0.9974571873378308, 'train_time': 2992.229295730591, 'test_time': 0.15524744987487793, 'single_estimator_with_best_params_training_time': 5.766896486282349}
+
+----- Best estimator-----
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': 'LinearSVC(max_iter=3000)', 'best_score': 0.9883885439941004, 'best_params': {'loss': 'squared_hinge', 'max_iter': 3000, 'multi_class': 'ovr'}, 'test_score': 0.9882719252724442, 'train_time': 1264.2648477554321, 'test_time': 0.03699994087219238, 'single_estimator_with_best_params_training_time': 30.140181064605713}
+
+----- Best estimator-----
