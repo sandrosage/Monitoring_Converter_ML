@@ -38,3 +38,9 @@
 {'scaling': None, 'pca': None, 'estimator': 'LinearSVC(max_iter=3000)', 'best_score': 0.9883885439941004, 'best_params': {'loss': 'squared_hinge', 'max_iter': 3000, 'multi_class': 'ovr'}, 'test_score': 0.9882719252724442, 'train_time': 1264.2648477554321, 'test_time': 0.03699994087219238, 'single_estimator_with_best_params_training_time': 30.140181064605713}
 
 ----- Best estimator-----
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+{'scaling': None, 'pca': None, 'estimator': 'LinearSVC(max_iter=3000)', 'best_score': 0.9960689737505362, 'best_params': {'loss': 'squared_hinge', 'max_iter': 3000, 'multi_class': 'ovr'}, 'test_score': 0.9964193046185781, 'train_time': 3612.664220094681, 'test_time': 0.06295132637023926, 'single_estimator_with_best_params_training_time': 31.40805172920227}
+
+----- Best estimator-----
