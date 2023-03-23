@@ -13,7 +13,7 @@ output_file = open("error_occurances.txt", "w")     # file as table to show the 
 for j in range(0,3):
     
     for i in range(0,6):
-        text = "Static_Data/" + arr[j] + "/STAT_" + naming[j] + "_" + str(i) + "A.txt"
+        text = "Data/Static_Data/" + arr[j] + "/STAT_" + naming[j] + "_" + str(i) + "A.txt"
         print(text)
         file = open(text, "r")
 
