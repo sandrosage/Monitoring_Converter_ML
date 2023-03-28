@@ -1,6 +1,5 @@
-import numpy as np 
+
 import time 
-import matplotlib.pyplot as plt
 from datetime import datetime
 import sys
 import socket
@@ -10,7 +9,6 @@ import re
 import RPi.GPIO as GPIO
 from time import sleep
 import serial
-from playsound import playsound
 import os
 import struct
 import smbus
@@ -29,8 +27,12 @@ port3 = 8997
 filename = ''
 
 data_to_send = []
-ser = serial.Serial("/dev/ttyACM0", 115200)
-ser.reset_input_buffer()
+###############################################################################
+# @ SANDRO SAGE
+# new data transmission version
+ser = serial.Serial("/dev/ttyACM0", 115200, bytesize=serial.EIGHTBITS)
+ser.reset_input_buffer() 
+###############################################################################
 
 def calc_i_out(high, low):
     val = (int.from_bytes(high, "little") << 8)+ int.from_bytes(low, "little")
@@ -122,46 +124,33 @@ def ssock(x):
         filename = y[0]
         
 def write_file(x):
+    print("Entered..")
     global old_temp
     global data_to_send
-    val_list = []
+    data_list = []
     #Für Client server: "run_data == "Run"" einfügen, für normalen betrieb while(1)
-    while(1):
-        response = ser.read()
-        if(response != b"V" and response != b"I" and response != b"O" and response != b"T"):
-            val_list.append(response)
 
-        if(response == b'V'):
-            while(len(val_list) < 2):
-                val_list.append(b'0')
-            x = calc_v_in(val_list[0], val_list[1])
+    ###############################################################################
+    # @SANDRO SAGE
+    # new data transmission version
+    while(1):            
+        line = ser.readline().strip           
+        if len(line) == 8:                 
+            for b in line:
+                data_list.append(b.to_bytes(1, "big"))
+
+            x = calc_v_in(data_list[0], data_list[1])
             data_to_send.append(x)
-            val_list = []
-
-
-        if(response == b'I'):
-            while(len(val_list) < 2):
-                val_list.append(b'0')
-            x = calc_i_out(val_list[0], val_list[1])
+            
+            x = calc_i_out(data_list[2], data_list[3])
             print("Strom: ", x)
             data_to_send.append(x)
-            val_list = []
-            
-
-
-        if(response == b'O'):
-            while(len(val_list) < 2):
-                val_list.append(b'0')
-            x = calc_v_out(val_list[0], val_list[1])
+                
+            x = calc_v_out(data_list[4], data_list[5])
             print("VOUT: ", x)
             data_to_send.append(x)
-            val_list = []
-
-
-        if(response == b'T'):
-            while(len(val_list) < 2):
-                val_list.append(b'0')
-            x = calc_temp(val_list[0], val_list[1])
+            
+            x = calc_temp(data_list[6], data_list[7])
             print("Temperatur:", x)
             if(x < 0):
                 x = x + 63.601
@@ -169,13 +158,12 @@ def write_file(x):
             temperature = read_temp()
             data_to_send.append(temperature)
             #Dateinamen hier umstellen
-            with open("STAT_DROSSEL_6A.txt", "a") as t:
+            with open("testfile.txt", "a") as t:
                 t.write(str(data_to_send)+"\n")
             data_to_send = []
-            val_list = []
+            data_list = []
+    ###############################################################################
   
-
-
 port = 8998
 
 try:
@@ -199,18 +187,18 @@ val = bus.read_i2c_block_data(i2c_address, reg_config, 2)
 
 
 while(1):
-    y = threading.Thread(target = ssock, args = (1,))
+    #y = threading.Thread(target = ssock, args = (1,))
     y2 = threading.Thread(target = write_file, args =(1,))
 
-    y.start()
+    #y.start()
     y2.start()
     if(run_data == "Quit"):
         s.close()
-        bus.close()
+        #bus.close()
         sys.exit()
-        y.join()
+        #y.join()
         y2.join()
         
-    y.join()
+    #y.join()
     y2.join()
 

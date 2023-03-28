@@ -2,7 +2,8 @@
 
 ## Introduction:
 
-### Static Data:
+### Data Acquisition:
+#### Static Data:
 For the static data generation we tested the below dcdc-Converters. They were all tested with different loads (0A, 1A, 2A, 3A, 4A, 5A, 6A). Communication: 115200 kbps UART, delay(2) excluded. Every recording had a duration of 30 minutes. We also measured the room temperature to have a reference value.
 
     We used three different dcdc-Converter:
@@ -19,26 +20,28 @@ For the static data generation we tested the below dcdc-Converters. They were al
    
 For the recording an input voltage of 24V was used. The measurements were determined with a Arduino UNO through I2C (100 kHz) and sent to a Raspberry PI 4 with UART (baudrate: 115200). 
 
-### Audio Recordings:
+#### Audio Recordings:
 
 For the audio amplifier a "Conrad Components Stereo-Verstärker Bausatz 9 V/DC, 12 V/DC, 18 V/DC 35 W 2 Ω" with 2 x 35 W NF-Verstärker was used. The input voltage for the amplifier was 12V. The resistor load is 2.5 Ω.
 
 For the audio signal a normal pc/laptop which played a MP3-File was used.
-### Steps:
-#### 1. Data recording/generation for "NORMAL"-dcdc
+#### Steps:
+##### 1. Data recording/generation for "NORMAL"-dcdc
     data for every song(3) was recorded thrice and labeled as V1, V2, V3
-#### 2. Data recording/generation for "DROSSEL"-dcdc
+##### 2. Data recording/generation for "DROSSEL"-dcdc
     data for every song(3) was recorded thrice and labeled as V1, V2, V3
-#### 3. Data recording/generation for "MOSFET"-dcdc
+##### 3. Data recording/generation for "MOSFET"-dcdc
     data for every song(3) was recorded thrice and labeled as V1, V2, V3
 
-### Songs:
+#### Songs:
     Labeled as NG <--- Rick Astley - Never Gonna Give You Up: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
     Labeled as PIECES <--- AVAION, VIZE, Leony - Pieces: https://www.youtube.com/watch?v=mMbGQkvxVag
     
     Labeled as NEELIX <--- Neelix - The Twenty Five: https://www.youtube.com/watch?v=SPY1sGZN6hc
 
+#### Code:
+The code running on the Arduino is **``Arduino/i2c_data_transmission.ino``**. The implementation for the Raspberry Pi is located in **``Arduino/new_Get_Data_Ard.py``**. Both are new versions which no longer contain the transmission error.
 ### Preprocessing
 
 Each recording is stored in a textfile at first. Then the textfile is cleaned and processed. Afterward, the files are converted into CSV files. The next processing step is to divide each CSV-file into subsets for the windowing method. This is achieved with a subset size of 5000 and a shift (samples in which the subsets are overlapping) of 100. The significant information is extracted of each subset:
