@@ -17,6 +17,7 @@ Machine_Learining/scaled_pca_/
 Machine_Learining/normal_/
 Machine_Learining/log_pruning_summaries/
 Data/
+Machine_Learining/multiple_output_classification.ipynb
 # AUTO GENERATED
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python,visualstudiocode,vim
