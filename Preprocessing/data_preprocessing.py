@@ -101,7 +101,7 @@ class Dataframe_processing:
             
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_subset["power"] = df_subset['currentOut'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
@@ -126,7 +126,7 @@ class Dataframe_processing:
             
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_subset["power"] = df_subset['currentOut'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
@@ -147,7 +147,7 @@ class Dataframe_processing:
             i = i + shift
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_subset["power"] = df_subset['currentOut'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
@@ -167,7 +167,7 @@ class Dataframe_processing:
             i = i + shift
             #2.Step: Calculate power, power_mean, temperature_max, temperature_min for each subset
             #        and transform it back into an dataframe
-            df_subset["power"] = df_subset['currentIn'] * df_subset['vOut']
+            df_subset["power"] = df_subset['currentOut'] * df_subset['vOut']
             df_dictionary = Dataframe_processing.calculate_values(df_subset)
             
             #3.Step: merge the subsets back to one dataframe
@@ -198,5 +198,5 @@ class Dataframe_processing:
         df = df[(df["vIn"] >= min_Vin) & (df["vIn"] <= max_Vin)]
         df = df[(df["onBoardTemp"] >= min_temp) & (df["onBoardTemp"] <= max_temp)]
         df = df[(df["vOut"] >= min_Vout) & (df["vOut"] <= max_Vout)]
-        df = df[(df["currentIn"] >= min_current) & (df["currentIn"] <= max_current)]
+        df = df[(df["currentOut"] >= min_current) & (df["currentOut"] <= max_current)]
         return df
