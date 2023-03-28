@@ -41,7 +41,7 @@ For the audio signal a normal pc/laptop which played a MP3-File was used.
     Labeled as NEELIX <--- Neelix - The Twenty Five: https://www.youtube.com/watch?v=SPY1sGZN6hc
 
 #### Code:
-The code running on the Arduino is **``Arduino/i2c_data_transmission.ino``**. The implementation for the Raspberry Pi is located in **``Arduino/new_Get_Data_Ard.py``**. Both are new versions which no longer contain the transmission error. The code was implemented in collaboration with Sergej Lammert. The edited code for the new version is visibly commented.
+The code running on the Arduino is **``Arduino_RaspPi/i2c_data_transmission.ino``**. The implementation for the Raspberry Pi is located in **``Arduino_RaspPi/new_Get_Data_Ard.py``**. Both are new versions which no longer contain the transmission error. The code was implemented in collaboration with Sergej Lammert. The edited code for the new version is visibly commented.
 ### Preprocessing
 
 Each recording is stored in a textfile at first. Then the textfile is cleaned and processed. Afterward, the files are converted into CSV files. The next processing step is to divide each CSV-file into subsets for the windowing method. This is achieved with a subset size of 5000 and a shift (samples in which the subsets are overlapping) of 100. The significant information is extracted of each subset:
